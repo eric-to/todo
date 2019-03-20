@@ -5,7 +5,8 @@ html {
 body {
   background-color: #FECDAF;
   color: #7888FF;
-  font-family: "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* font-family: "Roboto", "Droid Sans", "Helvetica Neue", sans-serif; */
+  font-family: "Tahoma";
   font-size: 13px;
   height: 100%;
   letter-spacing: 0.8px;
@@ -18,11 +19,53 @@ body {
   align-items: center;
 }
 
-.todo-list {
+button {
+  border: none;
+  color: #7888FF;
+  cursor: pointer;
+  font-size: 18px;
+  outline: none;
+}
+
+.app {
   background-color: white;
-  min-width: 380px;
+  box-shadow: 16px 16px 16px #CF9573;
+  min-width: 340px;
+  top: 95px;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-header {
+  border-bottom: 1px solid #F6F7FF;
+}
+
+.todo-list {
+  padding: 10px;
+  /* min-height: 340px; */
 }
 
 .todo {
   display: flex;
+  padding: 10px;
+}
+
+.complete {
+  color: #DDE0FF;
+  text-decoration: line-through;
+}
+
+.card-footer {
+  border-top: 1px solid #F6F7FF;
+  display: flex;
+  justify-content: space-between;
 }

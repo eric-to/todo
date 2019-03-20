@@ -3,8 +3,7 @@ import React from 'react';
 function Todo({ todo, index, completeTodo }) {
   return (
     <div
-      className="todo"
-      style={{ textDecoration: todo.isDone ? "line-through" : "" }}
+      className={ todo.isComplete ? "complete todo" : "todo" }
     >
       <div>
         <button onClick={() => completeTodo(index)}>Complete</button>

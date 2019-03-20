@@ -12,11 +12,13 @@ function TodoForm({ addTodo }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      ADD NEW
+      {/* <input
         type="text"
         className="input"
         onChange={e => setValue(e.target.value)}
-      />
+      /> */}
+      <button>+</button>
     </form>
   )
 }
