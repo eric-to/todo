@@ -5,9 +5,10 @@ function Todo({ todo, index, completeTodo }) {
     <div
       className={ todo.isComplete ? "complete todo" : "todo" }
     >
-      <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-      </div>
+      <label className="checkbox-container">
+        <input type="checkbox" onClick={() => completeTodo(index)} />
+        <span class="checkmark"></span>
+      </label>
       {todo.text}
     </div>
   );

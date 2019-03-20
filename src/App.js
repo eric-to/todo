@@ -20,7 +20,11 @@ function App() {
 
   const completeTodo = index => {
     const newTodos = [...todos];
-    newTodos[index].isComplete = true;
+    if (newTodos[index].isComplete) {
+      newTodos[index].isComplete = false;
+    } else {
+      newTodos[index].isComplete = true;
+    }
     setTodos(newTodos);
   }
 
