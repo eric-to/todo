@@ -1,27 +1,20 @@
 import React, { useState } from 'react';
 
-import TodoHeader from './TodoHeader';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
+import TodoHeader from './TodoHeader';
 
 function App() {
-  const [todos, setTodos] = useState([
-    { text: "Morning run", isComplete: false, time: "7:30" },
-    { text: "Meeting", isComplete: false, time: "10:15" },
-    { text: "Lunch with Mike", isComplete: false, time: "13:00" },
-    { text: "Pay Bills", isComplete: false, time: "ALL DAY" },
-    { text: "Renew gym membership", isComplete: false, time: "ALL DAY" },
-  ]);
+  const [todos, setTodos] = useState(JSON.parse(sessionStorage.getItem("todos")) || []);
   const [numTasks, setNumTasks] = useState(5);
   const [completedTodos, setCompletedTodos] = useState([
     { text: "Oh ya", isComplete: true, time: "8:30" }
   ]);
 
   const addTodo = text => {
-    console.log(text);
     const newTodos = [...todos, text];
-    console.log(newTodos)
     setNumTasks(numTasks + 1)
+    sessionStorage.setItem("todos", JSON.stringify(newTodos));
     setTodos(newTodos);
   }
 
@@ -38,6 +31,7 @@ function App() {
       newTodos.splice(index, 1);
     }
     setNumTasks(numTasks + changeNumTasks);
+    sessionStorage.setItem("todos", newTodos);
     setTodos(newTodos);
   }
 

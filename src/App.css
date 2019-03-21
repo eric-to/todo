@@ -7,7 +7,7 @@ body {
   color: #7888FF;
   font-family: "Tahoma", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 12px;
-  height: 100vh;
+  /* height: 100vh; */
   letter-spacing: 0.7px;
   margin: 0;
   padding: 0;
@@ -46,6 +46,8 @@ input[type="text"] {
   top: 95px;
   display: flex;
   flex-direction: column;
+
+  margin-top: 10vh;
 }
 
 .card {
