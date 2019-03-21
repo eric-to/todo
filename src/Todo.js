@@ -13,7 +13,7 @@ function Todo({ todo, index, completeTodo }) {
         <div>{todo.text}</div>
       </div>
       <div>
-        {todo.isComplete ? "" : todo.time}
+        <div className="time">{todo.isComplete ? "" : todo.time}</div>
       </div>
     </div>
   );

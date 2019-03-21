@@ -42,7 +42,7 @@ function App() {
         ))}
       </div>
       <footer className="card card-footer">
-        {todos.length} TASKS
+        { todos.length !== 1 ? `${todos.length} TASKS` : "1 TASK" }
         <TodoForm addTodo={addTodo} />
       </footer>
     </div>

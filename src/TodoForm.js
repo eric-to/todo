@@ -18,6 +18,7 @@ function TodoForm({ addTodo }) {
         type="text"
         className="input"
         onChange={e => setValue(e.target.value)}
+        placeholder="e.g. Morning Run @ 7:30"
         />
       );
     } else {
@@ -32,7 +33,7 @@ function TodoForm({ addTodo }) {
   return (
     <form onSubmit={handleSubmit}>
       {footer()}
-      <button onClick={e => setIsAddingTodo(!isAddingTodo)}>+</button>
+      <button onClick={e => setIsAddingTodo(!isAddingTodo)}>{isAddingTodo ? "-" : "+"}</button>
     </form>
   )
 }
