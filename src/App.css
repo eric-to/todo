@@ -46,26 +46,29 @@ button {
 }
 
 .card-header {
-  border-bottom: 1px solid #F6F7FF;
+  border-bottom: 2px solid #F6F7FF;
 }
 
 .todo-list {
   padding: 10px;
-  /* min-height: 340px; */
+  min-height: 340px;
+  max-height: 340px;
+  overflow-y: scroll;
 }
 
 .todo {
   display: flex;
+  justify-content: space-between;
   padding: 10px;
 }
 
-.complete {
-  color: #DDE0FF;
+.completed {
+  color: #D7DBFF;
   text-decoration: line-through;
 }
 
 .card-footer {
-  border-top: 1px solid #F6F7FF;
+  border-top: 2px solid #F6F7FF;
   display: flex;
   justify-content: space-between;
 }

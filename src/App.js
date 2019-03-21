@@ -6,11 +6,11 @@ import TodoForm from './TodoForm';
 
 function App() {
   const [todos, setTodos] = useState([
-    { text: "Morning run", isComplete: false },
-    { text: "Meeting", isComplete: false },
-    { text: "Lunch with Mike", isComplete: false },
-    { text: "Pay Bills", isComplete: false },
-    { text: "Renew gym membership", isComplete: false },
+    { text: "Morning run", isComplete: false, time: "7:30" },
+    { text: "Meeting", isComplete: false, time: "10:15" },
+    { text: "Lunch with Mike", isComplete: false, time: "13:00" },
+    { text: "Pay Bills", isComplete: false, time: "ALL DAY" },
+    { text: "Renew gym membership", isComplete: false, time: "ALL DAY" },
   ]);
 
   const addTodo = text => {
@@ -42,7 +42,7 @@ function App() {
         ))}
       </div>
       <footer className="card card-footer">
-        {todos.length} Tasks
+        {todos.length} TASKS
         <TodoForm addTodo={addTodo} />
       </footer>
     </div>
