@@ -5,8 +5,7 @@ html {
 body {
   background-color: #FECDAF;
   color: #7888FF;
-  /* font-family: "Roboto", "Droid Sans", "Helvetica Neue", sans-serif; */
-  font-family: "Tahoma";
+  font-family: "Tahoma", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 13px;
   height: 100%;
   letter-spacing: 0.8px;
@@ -31,18 +30,18 @@ button {
   background-color: white;
   box-shadow: 16px 16px 16px #CF9573;
   min-width: 340px;
-  top: 95px;
   overflow-y: scroll;
-
+  top: 95px;
   display: flex;
   flex-direction: column;
 }
 
 .card {
+  padding: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
 .card-header {
@@ -51,8 +50,8 @@ button {
 
 .todo-list {
   padding: 10px;
-  min-height: 340px;
   max-height: 340px;
+  min-height: 340px;
   overflow-y: scroll;
 }
 
