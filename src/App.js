@@ -12,19 +12,30 @@ function App() {
     { text: "Pay Bills", isComplete: false, time: "ALL DAY" },
     { text: "Renew gym membership", isComplete: false, time: "ALL DAY" },
   ]);
+  const [numTasks, setNumTasks] = useState(5);
+  const [completedTodos, setCompletedTodos] = useState([
+    { text: "Oh ya", isComplete: true, time: "8:30" }
+  ]);
 
   const addTodo = text => {
     const newTodos = [...todos, { text }];
+    setNumTasks(numTasks + 1)
     setTodos(newTodos);
   }
 
   const completeTodo = index => {
-    const newTodos = [...todos];
+    let newTodos = [...todos];
+    let changeNumTasks;
     if (newTodos[index].isComplete) {
       newTodos[index].isComplete = false;
+      changeNumTasks = 1;
     } else {
       newTodos[index].isComplete = true;
+      changeNumTasks = -1;
+      setCompletedTodos(completedTodos.concat([newTodos[index]]));
+      newTodos.splice(index, 1);
     }
+    setNumTasks(numTasks + changeNumTasks);
     setTodos(newTodos);
   }
 
@@ -32,7 +43,7 @@ function App() {
     <div className="app">
       <TodoHeader />
       <div className="todo-list">
-        {todos.map((todo, index) => (
+        {todos.concat(completedTodos).map((todo, index) => (
           <Todo
             key={index}
             index={index}
@@ -42,7 +53,7 @@ function App() {
         ))}
       </div>
       <footer className="card card-footer">
-        { todos.length !== 1 ? `${todos.length} TASKS` : "1 TASK" }
+        { numTasks === 1 ? "1 TASK" : `${numTasks} TASKS` }
         <TodoForm addTodo={addTodo} />
       </footer>
     </div>
