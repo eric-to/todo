@@ -7,7 +7,7 @@ function Todo({ todo, index, completeTodo }) {
     >
       <div className="checkbox-container-container">
         <label className="checkbox-container">
-          <input type="checkbox" checked={todo.isComplete ? "checked" : ""} disabled={todo.isComplete ? true : false} onClick={() => completeTodo(index)} />
+          <input type="checkbox" readOnly checked={todo.isComplete ? "checked" : ""} disabled={todo.isComplete ? true : false} onClick={() => completeTodo(index)} />
           <span className="checkmark"></span>
         </label>
         <div>{todo.text}</div>

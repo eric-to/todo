@@ -2,39 +2,47 @@ import React, { useState } from 'react';
 
 function TodoForm({ addTodo }) {
   const [value, setValue] = useState("");
+  const [time, setTime] = useState("");
   const [isAddingTodo, setIsAddingTodo] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!value) return;
-    addTodo(value);
+    if (!value || !time) return;
+    addTodo({text: value, isComplete: false, time: time});
     setValue("");
+    // window.location.reload();
   };
 
   const footer = () => {
     if (isAddingTodo) {
       return (
-        <input
-        type="text"
-        className="input"
-        onChange={e => setValue(e.target.value)}
-        placeholder="e.g. Morning Run @ 7:30"
-        />
+        <div>
+          <input
+            type="text"
+            className="input"
+            onChange={e => setValue(e.target.value)}
+            placeholder="e.g., Meeting"
+          />
+          <input
+            type="text"
+            className="input"
+            onChange={e => setTime(e.target.value)}
+            placeholder="e.g., 10:15"
+          />
+        </div>
       );
     } else {
       return (
-        <span>
-          ADD NEW
-        </span>
+        <button onClick={e => setIsAddingTodo(!isAddingTodo)}>ADD NEW</button>
       );
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="todo-form">
       {footer()}
-      <button onClick={e => setIsAddingTodo(!isAddingTodo)}>{isAddingTodo ? "-" : "+"}</button>
-    </form>
+      <button onClick={handleSubmit}>+</button>
+    </div>
   )
 }
 

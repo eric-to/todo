@@ -18,7 +18,9 @@ function App() {
   ]);
 
   const addTodo = text => {
-    const newTodos = [...todos, { text }];
+    console.log(text);
+    const newTodos = [...todos, text];
+    console.log(newTodos)
     setNumTasks(numTasks + 1)
     setTodos(newTodos);
   }
@@ -53,7 +55,7 @@ function App() {
         ))}
       </div>
       <footer className="card card-footer">
-        { numTasks === 1 ? "1 TASK" : `${numTasks} TASKS` }
+        <div className="light-purple">{ numTasks === 1 ? "1 TASK" : `${numTasks} TASKS` }</div>
         <TodoForm addTodo={addTodo} />
       </footer>
     </div>
