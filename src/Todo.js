@@ -1,6 +1,12 @@
 import React from 'react';
 
 function Todo({ todo, index, completeTodo }) {
+  // A todo list is comprised of many todos. Here we've isolated the code needed
+  // to create a single todo. I made two CSS classes, completed and todo, which
+  // are used to style todos based on their completion status. Both incomplete and
+  // complete todos are types of todos. Therefore, they both belong to the todo class.
+  // Since completed todos look a little bit different (strikethrough), these elements
+  // get an additional 'completed' class.
   return (
     <div
       className={todo.isComplete ? "completed todo" : "todo"}

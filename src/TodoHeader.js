@@ -10,6 +10,7 @@ function TodoHeader() {
   const date = now.getDate();
 
   return (
+    // Had to use &nbsp to add a space between the day and today's date
     <header className="card card-header">
       <strong>{`${day}`}</strong><strong> , </strong>&nbsp;{month} {date}
     </header>

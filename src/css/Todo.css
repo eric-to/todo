@@ -1,0 +1,57 @@
+.app {
+  background-color: white;
+  box-shadow: 16px 16px 16px #CF9573;
+  margin-top: 10vh;
+  min-width: 340px;
+  overflow-y: scroll;
+  top: 95px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header {
+  border-bottom: 2px solid #F6F7FF;
+}
+
+.todo-list {
+  padding: 10px;
+  max-height: 340px;
+  min-height: 340px;
+  overflow-y: scroll;
+}
+
+.todo {
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  color: #D7DBFF;
+}
+
+.completed {
+  color: #D7DBFF;
+  text-decoration: line-through;
+}
+
+.card-footer {
+  border-top: 2px solid #F6F7FF;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-form {
+  display: flex;
+}

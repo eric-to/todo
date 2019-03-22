@@ -1,0 +1,52 @@
+body {
+  background-color: #FECDAF;
+  color: #7888FF;
+  font-family: "Tahoma", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  border: none;
+  color: #7888FF;
+  cursor: pointer;
+  font-size: 13px;
+  outline: none;
+}
+
+input[type="text"] {
+  color: #7888FF;
+  border: 1px solid #DDE0FF;
+  height: 15px;
+  margin-right: 2px;
+  outline: none;
+  padding-left: 3px;
+  width: 90px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #7888FF;
+  opacity: 0.6; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
+}
+
+.light-purple {
+  color: #7888FF;
+  opacity: 0.5; /* Using opacity gives me a little more control over the text's lightness */
+}

@@ -6,10 +6,8 @@ import TodoHeader from './TodoHeader';
 
 function App() {
   const [todos, setTodos] = useState(JSON.parse(sessionStorage.getItem("todos")) || []);
-  const [numTasks, setNumTasks] = useState(5);
-  const [completedTodos, setCompletedTodos] = useState([
-    { text: "Oh ya", isComplete: true, time: "8:30" }
-  ]);
+  const [numTasks, setNumTasks] = useState(todos.length);
+  const [completedTodos, setCompletedTodos] = useState(JSON.parse(sessionStorage.getItem("completedTodos")) || []);
 
   const addTodo = text => {
     const newTodos = [...todos, text];
@@ -27,11 +25,12 @@ function App() {
     } else {
       newTodos[index].isComplete = true;
       changeNumTasks = -1;
+      sessionStorage.setItem("completedTodos", JSON.stringify(completedTodos.concat([newTodos[index]])));
       setCompletedTodos(completedTodos.concat([newTodos[index]]));
       newTodos.splice(index, 1);
     }
     setNumTasks(numTasks + changeNumTasks);
-    sessionStorage.setItem("todos", newTodos);
+    sessionStorage.setItem("todos", JSON.stringify(newTodos));
     setTodos(newTodos);
   }
 
