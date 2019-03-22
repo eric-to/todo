@@ -13,12 +13,19 @@ function Todo({ todo, index, completeTodo }) {
     >
       <div className="checkbox-container-container">
         <label className="checkbox-container">
-          <input type="checkbox" readOnly checked={todo.isComplete ? "checked" : ""} disabled={todo.isComplete ? true : false} onClick={() => completeTodo(index)} />
+          <input
+            type="checkbox"
+            checked={todo.isComplete ? "checked" : ""}
+            disabled={todo.isComplete ? true : false}
+            onClick={() => completeTodo(index)}
+            readOnly
+          />
           <span className="checkmark"></span>
         </label>
         <div>{todo.text}</div>
       </div>
       <div>
+        {/* Hide time when the todo is checked off */}
         <div className="time">{todo.isComplete ? "" : todo.time}</div>
       </div>
     </div>

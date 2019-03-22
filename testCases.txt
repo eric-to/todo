@@ -1,0 +1,7 @@
+If this were a production app:
+1. I would use a database for storing todos and check for persistency in the app (do the todos persist
+throughout the day and reset at the correct time).
+2. Test for responsiveness on various, possibly obscurely sized devices.
+3. For security flaws.
+4. Performance. Are there any issues when there's thousands of todos on the list. Will it effect
+consequent adding and completion of todos?
